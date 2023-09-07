@@ -1,6 +1,5 @@
 name: Run Visual Basic 6.0 build
-description: >-
-  Run vb.exe make for specified VB project
+description: Run vb.exe make for specified VB project
 inputs:
   vpbpath:
     description: path to visual basic project (*.vbp)
@@ -9,7 +8,9 @@ inputs:
     description: output path for build output
     required: false
     default: "."
-runs: |
+runs: 
   $vb6_project_path = ${{ inputs.vpbpath }}
   $outputdir = ${{outputs.outdir}}
   VB6 /MAKE "$vb6_project_path" /outdir "$outputdir"
+  shell: pwsh
+  
