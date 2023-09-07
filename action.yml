@@ -9,8 +9,8 @@ inputs:
     required: false
     default: "."
 runs: |
-  $vb6_project_path = ${{ inputs.vpbpath }}
-  $outputdir = ${{outputs.outdir}}
+  $vb6_project_path="${{ inputs.vpbpath }}"
+  $outputdir="${{outputs.outdir}}"
   VB6 /MAKE "$vb6_project_path" /outdir "$outputdir"
   shell: pwsh
   
