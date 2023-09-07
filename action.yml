@@ -1,0 +1,15 @@
+name: Run Visual Basic 6.0 build
+description: >-
+  Run vb.exe make for specified VB project
+inputs:
+  vpbpath:
+    description: >-
+      path to visual basic project (*.vbp)
+    required: true
+  outdir:
+    description: >-
+      output path for build output
+    required: false
+    default: "."
+runs: |
+  VB6 /MAKE "${{ vpbpath }} /outdir "${{ outdir }}
