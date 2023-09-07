@@ -14,4 +14,4 @@ inputs:
 runs: |
   $vb6_project_path = ${{ inputs.vb6_project_path }}
   $outputdir = ${{outputs.outdir}}
-  VB6 /MAKE "$vpbpath /outdir "$outputdir
+  VB6 /MAKE "$vb6_project_path /outdir "$outputdir
