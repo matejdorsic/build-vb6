@@ -9,8 +9,8 @@ inputs:
     required: false
     default: "."
 runs: |
-  $vb6_project_path="${{ github.event.inputs.vpbpath }}"
+  $vb6projectpath="${{ github.event.inputs.vpbpath }}"
   $outputdir="${{ github.event.outputs.outdir}}"
-  VB6 /MAKE "$vb6_project_path" /outdir "$outputdir"
+  VB6 /MAKE "$vb6projectpath" /outdir "$outputdir"
   shell: pwsh
   
