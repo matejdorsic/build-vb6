@@ -12,4 +12,6 @@ inputs:
     required: false
     default: "."
 runs: |
-  VB6 /MAKE "${{ vpbpath }} /outdir "${{ outdir }}
+  $vb6_project_path = ${{ inputs.vb6_project_path }}
+  $outputdir = ${{outputs.outdir}}
+  VB6 /MAKE "$vpbpath /outdir "$outputdir
