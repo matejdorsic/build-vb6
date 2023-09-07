@@ -10,8 +10,8 @@ inputs:
     default: "."
 shell: pwsh
 runs: |
-  $vbprojectpath="c:\actions-runner\_work\MyVBApp\MyVBApp\DummyApp.vbp"
-  $outputdir="c:\actions-runner\_work\MyVBApp\MyVBApp\"
+  $vbprojectpath = "c:\actions-runner\_work\MyVBApp\MyVBApp\DummyApp.vbp"
+  $outputdir = "c:\actions-runner\_work\MyVBApp\MyVBApp\"
   VB6 /MAKE $vbprojectpath /outdir $outputdir
   
   
