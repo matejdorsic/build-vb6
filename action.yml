@@ -19,4 +19,4 @@ runs:
         Write-Output "Visual Basic project path is $vbpprojectpath"
         Write-Output "Output directory is $outputdir"
         VB6 /MAKE $vbpprojectpath /outdir $outputdir
-        echo "::set-output name=buildstatus::$?"
+        echo "{name}={buildstatus}" >> $GITHUB_OUTPUT
