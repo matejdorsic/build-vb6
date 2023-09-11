@@ -20,5 +20,5 @@ runs:
         Write-Output "Current dir is $currentdir"
         Write-Output "Visual Basic project path is $vbpprojectpath"
         Write-Output "Output directory is $outputdir"
-        VB6 /MAKE $vbpprojectpath /outdir $outputdir >> $GITHUB_OUTPUT
+        VB6 /MAKE $vbpprojectpath /outdir $outputdir
         echo "{name}={buildstatus}" >> $GITHUB_OUTPUT
