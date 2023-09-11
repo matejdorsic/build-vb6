@@ -10,6 +10,4 @@ inputs:
     default: "."
 shell: pwsh
 runs: |
-  '& $vbprojectpath = "c:\actions-runner\_work\MyVBApp\MyVBApp\DummyApp.vbp"'
-  '& $outputdir = "c:\actions-runner\_work\MyVBApp\MyVBApp\"'
-  '& echo $vbprojectpath $outputdir'
+  '& echo "Ahoj"'
