@@ -15,5 +15,5 @@ runs:
       shell: pwsh
       run: |
         $vbprojectpath = ${{ inputs.vbppath }}
-        $outputdir = ${{ outputs.outdir }}
+        $outputdir = ${{ inputs.outdir }}
         VB6 /MAKE $vbprojectpath /outdir $outputdir
