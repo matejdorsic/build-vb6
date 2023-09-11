@@ -10,4 +10,4 @@ inputs:
     default: "."
 shell: pwsh
 runs: |
-  echo "Ahoj"
+  'echo "Ahoj"'
