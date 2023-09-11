@@ -1,7 +1,7 @@
 name: Run Visual Basic 6.0 build
 description: Run vb.exe make for specified VB project
 inputs:
-  vbppath:
+  vbpprojectpath:
     description: path to visual basic project (*.vbp)
     required: true
   outdir:
@@ -14,6 +14,9 @@ runs:
     - name: Compile vbp file
       shell: pwsh
       run: |
-        $vbprojectpath = ${{ inputs.vbppath }}
-        $outputdir = ${{ inputs.outdir }}
-        VB6 /MAKE $vbprojectpath /outdir $outputdir
+        $vbpprojectpath = "${{ inputs.vbpprojectpath }}"
+        $outputdir = "${{ inputs.outputdir }}"
+        Write-Output "Visual Basic project path is $vbpprojectpath"
+        Write-Output "Output directory is $outputdir"
+        VB6 /MAKE $vbpprojectpath /outdir $outputdir
+        echo "::set-output name=buildstatus::$?"
