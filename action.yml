@@ -1,7 +1,7 @@
 name: Run Visual Basic 6.0 build
 description: Run vb.exe make for specified VB project
 inputs:
-  vpbpath:
+  vbppath:
     description: path to visual basic project (*.vbp)
     required: true
   outdir:
@@ -11,12 +11,9 @@ inputs:
 runs: 
   using: 'composite'
   steps:
-    - name: Echo input
+    - name: Compile vbp file
       shell: pwsh
       run: |
-        $vbprojectpath = "c:\actions-runner\_work\MyVBApp\MyVBApp\DummyApp.vbp"
-        $outputdir = "c:\actions-runner\_work\MyVBApp\MyVBApp\"
-    - name: Compile project
-      shell: pwsh
-      run: |
-        echo $vbprojectpath $outputdir
+        $vbprojectpath = ${{ inputs.vbppath }}
+        $outputdir = ${{ outputs.outdir }}
+        VB6 /MAKE $vbprojectpath /outdir $outputdir
