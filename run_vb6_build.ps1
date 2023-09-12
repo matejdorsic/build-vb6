@@ -38,7 +38,7 @@ Write-Host $user
 try {
     VB6 /make $vbpprojectpath /outdir $outdir #/out $buildLogFile 
 
-    if (TestPath "c:\actions-runner\_work\MyVBApp\MyVBApp\DummyApp.exe"){
+    if (Test-Path "c:\actions-runner\_work\MyVBApp\MyVBApp\DummyApp.exe"){
         Write-Host "Cool app is build"
     }
     else{
