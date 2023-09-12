@@ -20,4 +20,4 @@ runs:
         Write-Output "Current dir is $currentdir"
         Write-Output "Visual Basic project path is $vbpprojectpath"
         Write-Output "Output directory is $outputdir"        
-        & $env:GITHUB_ACTION_PATH/run_vb6_build.ps1 $vbpprojectpath $outputdir ${{ runner.temp }} >> $GITHUB_OUTPUT
+        & $env:GITHUB_ACTION_PATH/run_vb6_build.ps1 $vbpprojectpath $outputdir ${{ runner.temp }} >> $env:GITHUB_OUTPUT
