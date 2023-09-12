@@ -51,7 +51,7 @@ Start-Sleep -Milliseconds 1000
 
 if(!(Test-Path $buildLogFile)){
     Write-Host "Build log does not exists"
-    return 0
+    exit 0
 }
 
 $log = Get-Content $buildLogFile | Select-Object -Unique  
