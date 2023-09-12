@@ -14,7 +14,7 @@ runs:
   using: 'composite'
   steps:
     - name: Compile vbp file
-      id: build_vb_proj
+    - id: build_vb_proj
       shell: pwsh
       run: |
         $currentdir = pwd
