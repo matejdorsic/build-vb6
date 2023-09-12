@@ -13,14 +13,10 @@ runs:
   steps:
     - name: Compile vbp file    
       shell: pwsh
-      run: |
-        $currentdir = pwd
+      run: |        
         $vbpprojectpath = "${{ inputs.vbpprojectpath }}"
-        $outputdir = "${{ inputs.outdir }}"
-        # Write-Output "Current dir is $currentdir"
-        # Write-Output "Visual Basic project path is $vbpprojectpath"
-        # Write-Output "Output directory is $outputdir"      
+        $outputdir = "${{ inputs.outdir }}"            
         & $Env:GITHUB_ACTION_PATH/run_vb6_build.ps1 $vbpprojectpath $outputdir ${{ runner.temp }} >> $Env:GITHUB_OUTPUT
         echo "Checking content"
-        Get-Content $Env:GITHUB_OUTPUT
+        #Get-Content $Env:GITHUB_OUTPUT
 
