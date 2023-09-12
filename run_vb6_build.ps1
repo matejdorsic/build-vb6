@@ -46,6 +46,10 @@ catch {
 #need to wait here a bit , as the file might not be ready ( powershell is soooo quick in Get-Content function :-D )
 Start-Sleep -Milliseconds 1000
 
+if(!(Test-Path $buildLogFile)){
+    return 3
+}
+
 $log = Get-Content $buildLogFile | Select-Object -Unique  
 
 if (Test-Path $buildLogFile) {
