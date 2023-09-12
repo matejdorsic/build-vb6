@@ -23,8 +23,8 @@ $projectName = [System.IO.Path]::GetFileNameWithoutExtension($fullProjectPath)
 #base path for build log file , then should come date suffix
 $buildLogFile = "${curdir}\build_${projectName}_${date}.log"
 
-Write-Host $vbpprojectpath
-Write-Host $buildLogFile 
+Write-Output $vbpprojectpath
+Write-Output $buildLogFile 
 
 # Run VB6 /make with the given arguments
 VB6 /make $vbpprojectpath /outdir $outdir /out $buildLogFile
@@ -39,10 +39,10 @@ if (Test-Path $buildLogFile) {
 }
 
 if ($log -match $regexSuccess){
-    Write-Host "Build success"
+    Write-Output "Build success"
     return 0
 }
 else  {
-    Write-Host $log
+    Write-Error $log
     return 1
 }
