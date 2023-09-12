@@ -32,6 +32,8 @@ try {
 
     VB6 /make $vbpprojectpath /outdir $outdir /out $buildLogFile 
 
+    Start-Sleep -Milliseconds 500
+
     if (Test-Path "c:\actions-runner\_work\MyVBApp\MyVBApp\DummyApp.exe"){
         Write-Host "Cool app is build"
         return 0
