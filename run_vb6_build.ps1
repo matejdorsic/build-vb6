@@ -38,7 +38,7 @@ try {
 
 }
 catch { 
-    Write-Error "Error running VB6 /make for some reason!!!"
+    # Write-Error "Error running VB6 /make for some reason!!!"
     Write-Error $_.ScriptStackTrace
     return 2
 }
