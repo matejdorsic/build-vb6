@@ -56,15 +56,11 @@ if(!(Test-Path $buildLogFile)){
 
 $log = Get-Content $buildLogFile | Select-Object -Unique  
 
-if (Test-Path $buildLogFile) {
-    # Remove-Item $buildLogFile -verbose
-}
-
 if ($log -match $regexSuccess){
     Write-Output "Build success"
-    return 0
+    exit 0
 }
 else  {
     Write-Error $log
-    return 1
+    exit 1
 }
