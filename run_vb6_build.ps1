@@ -32,13 +32,14 @@ Write-Host $buildLogFile
 Write-Host $currentDir
 
 # Run VB6 /make with the given arguments
-try{
+try {
     # VB6 /make $vbpprojectpath /outdir $outdir /out $buildLogFile 
     VB6 /?
 
 }
-catch{
+catch { 
     Write-Error "Error running VB6 /make for some reason!!!"
+    Write-Error $_.ScriptStackTrace
     return 2
 }
 
