@@ -25,9 +25,11 @@ $buildLogFile = "${curdir}\build_${projectName}_${date}.log"
 
 Write-Host "Running script for building VB project"
 
+$currentDir = Get-Location
+
 Write-Host $vbpprojectpath
 Write-Host $buildLogFile 
-Write-Host Get-Location
+Write-Host $currentDir
 
 # Run VB6 /make with the given arguments
 try{
