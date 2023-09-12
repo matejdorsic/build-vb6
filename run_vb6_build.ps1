@@ -1,9 +1,15 @@
 # Get the arguments
 $vbpprojectpath = $args[0]
 $outdir = $args[1]
+$logdir = $args[2]
 
 # Get the current directory
-$curdir = Get-Location
+if (!$logdir){
+    $curdir = Get-Location
+}
+else{
+    $curdir = $logdir
+}
 $date = Get-Date -Format "yyyyMMddHHmmss"
 
 $regexSuccess = "Build of .* succeeded."
