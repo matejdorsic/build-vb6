@@ -35,8 +35,7 @@ try {
     Start-Sleep -Milliseconds 500
 
     if (Test-Path "c:\actions-runner\_work\MyVBApp\MyVBApp\DummyApp.exe"){
-        Write-Host "Cool app is build"
-        return 0
+        Write-Host "Cool app is build"        
     }
     else{
         Write-Host "Sadly nothing is build"
@@ -45,7 +44,7 @@ try {
 catch { 
     # Write-Error "Error running VB6 /make for some reason!!!"
     Write-Error $_.ScriptStackTrace
-    return 2
+    exit 2
 }
 
 #need to wait here a bit , as the file might not be ready ( powershell is soooo quick in Get-Content function :-D )
