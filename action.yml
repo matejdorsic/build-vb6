@@ -16,7 +16,7 @@ runs:
       run: |
         $currentdir = pwd
         $vbpprojectpath = "${{ inputs.vbpprojectpath }}"
-        $outputdir = "${{ inputs.outputdir }}"
+        $outputdir = "${{ inputs.outdir }}"
         Write-Output "Current dir is $currentdir"
         Write-Output "Visual Basic project path is $vbpprojectpath"
         Write-Output "Output directory is $outputdir"        
