@@ -8,10 +8,13 @@ inputs:
     description: output path for build output
     required: false
     default: '.'
+outputs:
+  exe_file: ${{ steps.build_vb_proj.outputs.exe_file }}  
 runs: 
   using: 'composite'
   steps:
     - name: Compile vbp file
+      id: build_vb_proj
       shell: pwsh
       run: |
         $currentdir = pwd

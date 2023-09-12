@@ -40,6 +40,7 @@ try {
 
     if (Test-Path "c:\actions-runner\_work\MyVBApp\MyVBApp\DummyApp.exe"){
         Write-Host "Cool app is build"
+        return 0
     }
     else{
         Write-Host "Sadly nothing is build"
