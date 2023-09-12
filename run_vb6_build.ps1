@@ -27,6 +27,7 @@ Write-Host "Running script for building VB project"
 
 Write-Host $vbpprojectpath
 Write-Host $buildLogFile 
+Write-Host Get-Location
 
 # Run VB6 /make with the given arguments
 try{
