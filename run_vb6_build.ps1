@@ -25,21 +25,13 @@ $buildLogFile = "${curdir}\build_${projectName}_${date}.log"
 
 $user = [Security.Principal.WindowsIdentity]::GetCurrent().Name
 
-Write-Host "Running script for building VB project"
-
-$currentDir = Get-Location
-
-Write-Host $vbpprojectpath
-Write-Host $buildLogFile 
-Write-Host $currentDir
-Write-Host $user
+Write-Host "Running vb6 /make ${vbpprojectpath} /outdir ${outdir} /out ${buildLogFile} as ${user}"
 
 # Run VB6 /make with the given arguments
 try {
+
     VB6 /make $vbpprojectpath /outdir $outdir #/out $buildLogFile 
 
-    $myBuildedExe = "My builded exe"
-    
     if (Test-Path "c:\actions-runner\_work\MyVBApp\MyVBApp\DummyApp.exe"){
         Write-Host "Cool app is build"
         return 0
