@@ -57,7 +57,7 @@ if(!(Test-Path $buildLogFile)){
 $log = Get-Content $buildLogFile | Select-Object -Unique  
 
 if ($log -match $regexSuccess){
-    Write-Output "Build success"
+    Write-Host "Build success"
     exit 0
 }
 else  {
