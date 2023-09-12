@@ -27,7 +27,8 @@ Write-Output $vbpprojectpath
 Write-Output $buildLogFile 
 
 # Run VB6 /make with the given arguments
-VB6 /make $vbpprojectpath /outdir $outdir /out $buildLogFile
+VB6 /make $vbpprojectpath /outdir $outdir 
+#/out $buildLogFile
 
 #need to wait here a bit , as the file might not be ready ( powershell is soooo quick in Get-Content function :-D )
 Start-Sleep -Milliseconds 1000
