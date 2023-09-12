@@ -33,7 +33,7 @@ Write-Host $currentDir
 
 # Run VB6 /make with the given arguments
 try {
-    # VB6 /make $vbpprojectpath /outdir $outdir /out $buildLogFile 
+    VB6 /make $vbpprojectpath /outdir $outdir #/out $buildLogFile 
     VB6 /?
 
 }
