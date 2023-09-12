@@ -19,7 +19,5 @@ runs:
         $outputdir = "${{ inputs.outputdir }}"
         Write-Output "Current dir is $currentdir"
         Write-Output "Visual Basic project path is $vbpprojectpath"
-        Write-Output "Output directory is $outputdir"
-        & $env:GITHUB_ACTION_PATH/run_vb6_build.ps1 $vbpprojectpath $outputdir ${{ runner.temp }}
-        Write-Output "The command is: $($MyInvocation.Line)"
-        echo "{name}={buildstatus}" >> $GITHUB_OUTPUT
+        Write-Output "Output directory is $outputdir"        
+        echo & $env:GITHUB_ACTION_PATH/run_vb6_build.ps1 $vbpprojectpath $outputdir ${{ runner.temp }} >> $GITHUB_OUTPUT
