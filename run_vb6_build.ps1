@@ -23,6 +23,8 @@ $projectName = [System.IO.Path]::GetFileNameWithoutExtension($fullProjectPath)
 #base path for build log file , then should come date suffix
 $buildLogFile = "${curdir}\build_${projectName}_${date}.log"
 
+$user = [Security.Principal.WindowsIdentity]::GetCurrent().Name
+
 Write-Host "Running script for building VB project"
 
 $currentDir = Get-Location
@@ -30,6 +32,7 @@ $currentDir = Get-Location
 Write-Host $vbpprojectpath
 Write-Host $buildLogFile 
 Write-Host $currentDir
+Write-Host $user
 
 # Run VB6 /make with the given arguments
 try {
@@ -47,7 +50,7 @@ catch {
 Start-Sleep -Milliseconds 1000
 
 if(!(Test-Path $buildLogFile)){
-    Write-Error "BUild log does not exists"
+    Write-Error "Build log does not exists"
     return 0
 }
 
