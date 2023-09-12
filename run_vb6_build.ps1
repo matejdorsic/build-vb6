@@ -50,7 +50,7 @@ catch {
 Start-Sleep -Milliseconds 1000
 
 if(!(Test-Path $buildLogFile)){
-    Write-Error "Build log does not exists"
+    Write-Host "Build log does not exists"
     return 0
 }
 
