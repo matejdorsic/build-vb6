@@ -47,7 +47,8 @@ catch {
 Start-Sleep -Milliseconds 1000
 
 if(!(Test-Path $buildLogFile)){
-    return 3
+    Write-Error "BUild log does not exists"
+    return 0
 }
 
 $log = Get-Content $buildLogFile | Select-Object -Unique  
