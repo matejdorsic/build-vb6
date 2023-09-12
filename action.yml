@@ -21,5 +21,5 @@ runs:
         Write-Output "Visual Basic project path is $vbpprojectpath"
         Write-Output "Output directory is $outputdir"      
         & $Env:GITHUB_ACTION_PATH/run_vb6_build.ps1 $vbpprojectpath $outputdir ${{ runner.temp }} >> $Env:GITHUB_OUTPUT
-        echo $GITHUB_OUTPUT
+        echo $Env:GITHUB_OUTPUT
 
