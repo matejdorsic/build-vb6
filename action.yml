@@ -8,8 +8,6 @@ inputs:
     description: output path for build output
     required: false
     default: '.'
-outputs:
-  exe_file: ${{ steps.build_vb_proj.outputs.exe_file }}  
 runs: 
   using: 'composite'
   steps:
