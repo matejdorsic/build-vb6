@@ -61,6 +61,6 @@ if ($log -match $regexSuccess){
     exit 0
 }
 else  {
-    Write-Error "Error: ${log}"
+    Write-Error "${log}"
     exit 1
 }
