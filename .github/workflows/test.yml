@@ -44,8 +44,6 @@ jobs:
     runs-on: windows
     needs: prepare
     steps:
-      - env:
-          buildversion: ${{ needs.prepare.outputs.version }}
       - name: Build test
         run: |
             Write-Host "Build version is $buildversion"
