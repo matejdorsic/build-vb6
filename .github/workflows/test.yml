@@ -21,24 +21,24 @@ jobs:
       Solution_Name: tikAero
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-    - name: Check if manually dispatched
-      id: version-step
-      run: |
-          if ($env:GITHUB_EVENT_NAME -eq "workflow_dispatch") {
-            # Use the manually provided version from workflow input
-            $VERSION = "${{ inputs.version }}"
-          } else {
-            # Extract the tag name from the GITHUB_REF environment variable
-            $TAG_NAME = $env:GITHUB_REF -replace '^refs/tags/'
-            # Use the tag as the version
-            $VERSION = $TAG_NAME
-          }
-          echo "version=$VERSION" >> $env:GITHUB_OUTPUT
+      - name: Check if manually dispatched
+        id: version-step
+        run: |
+            if ($env:GITHUB_EVENT_NAME -eq "workflow_dispatch") {
+              # Use the manually provided version from workflow input
+              $VERSION = "${{ inputs.version }}"
+            } else {
+              # Extract the tag name from the GITHUB_REF environment variable
+              $TAG_NAME = $env:GITHUB_REF -replace '^refs/tags/'
+              # Use the tag as the version
+              $VERSION = $TAG_NAME
+            }
+            echo "version=$VERSION" >> $env:GITHUB_OUTPUT
           
   build-dependencies:
     runs-on: windows
